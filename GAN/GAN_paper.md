@@ -1,5 +1,5 @@
 # Generative Adversarial Nets
-https://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf
+논문 링크 : https://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf
 
 ## 0. Abstract
 - Adversarial Process을 통해, Generative Model을 evaluation 하는 새 Framework 제안
@@ -37,9 +37,9 @@ VAE, GAN
 
 ![2](https://user-images.githubusercontent.com/61506233/88512533-ae00af00-d021-11ea-835c-0e33a8d8296c.png)
 
-파랑색 : Descriminative distribution(0=가짜, 1=실제 data distribution으로 부터 온 data)
-검정색 : 실제 data distribution
-초록색 : Generator Distribution
+- 파랑색 : Descriminative distribution(0=가짜, 1=실제 data distribution으로 부터 온 data)
+- 검정색 : 실제 data distribution
+- 초록색 : Generator Distribution
 
 - (a) -> (d) / (d) : global optimum
 
@@ -49,7 +49,7 @@ G가 고정되었을 때, optimal discriminator D는 아래와 같다.
 
 
 ### proposition 2)
-()
+![5](https://user-images.githubusercontent.com/61506233/88512704-eef8c380-d021-11ea-90c7-3affd52e989f.jpg)
 
 ## 7. Conclustion
 
