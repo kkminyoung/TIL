@@ -24,7 +24,8 @@ VAE, GAN
 - D(x, theta_d) : D(x)는 x가 data로 부터 온 확률을 나타낸다. training 예제와 G로 부터 오는 sample에 올바른 라벨을 지정할 확률을 최대화 하도록 D를 train. (single scaar) 
 - 동시에 (1-D(G(z)))를 최소화 하도록 G를 train. 즉, D와 G는 2인 minmax
 
-()
+![1](https://user-images.githubusercontent.com/61506233/88512529-accf8200-d021-11ea-9ed5-9f4bc072a0a2.png)
+
 - max D : discriminative model이 구분을 잘 한다면, D(x) = 1, D(G(x)) = 0. 즉, log(D(x)) 및 log(1-D(G(x)))는 무한대. 따라서 위 식을 maximize해야 D가 잘 학습된다.
 - min G : generative model이 잘 생성한다면, discriminative model은 G(z)를 잘 구분하지 못하게 되며, D(G(z)) = 1이 된다. 따라서 log(1 - D(G(z))) = log(0) 은 -무한대. 따라서 위 식을 minimize해야 G가 잘 학습된다.
 
@@ -33,7 +34,8 @@ VAE, GAN
 ## 4. Theoretical Results
 - global optimum : p_g = p_data 일 때
 - 실제 분포에서 G가 data를 생성했을 때, 이때 Discriminator가 제대로 분류 x. 1/2 확률로 분류하게 됨
-()
+
+![2](https://user-images.githubusercontent.com/61506233/88512533-ae00af00-d021-11ea-835c-0e33a8d8296c.png)
 
 파랑색 : Descriminative distribution(0=가짜, 1=실제 data distribution으로 부터 온 data)
 검정색 : 실제 data distribution
@@ -43,10 +45,13 @@ VAE, GAN
 
 ### proposition 1)
 G가 고정되었을 때, optimal discriminator D는 아래와 같다.
-()
+![4](https://user-images.githubusercontent.com/61506233/88512539-afca7280-d021-11ea-88f7-96b0bc1624e0.jpg)
+
 
 ### proposition 2)
 ()
 
 ## 7. Conclustion
-()
+
+![3](https://user-images.githubusercontent.com/61506233/88512535-ae994580-d021-11ea-820d-f84fd084eed4.png)
+
