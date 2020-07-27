@@ -4,7 +4,7 @@
 
 
 ## 0. Abstract
-비지도학습에서 CNN이 주목을 덜 받고 있는데, 본 논문에서는 CNN을 비지도학습에 적용하는 DCGAN을 소개한다.
+본 논문에서는 CNN을 비지도학습에 적용하는 DCGAN을 소개한다.
 
 ## 1. Introduction
 - 기존의 GAN :  종종 불완전한 결과물을 가져온다. 학습과정을 알 수 없어 제한적이었다. (black box)
@@ -21,7 +21,7 @@
 
 ## 3. Approach And Model Architecture
 
-1) Max-pooling layer를 없애고 stride convolution이나 fractional-strided convolution을 사용하여 feature-map의 크기 조절
+1. Max-pooling layer를 없애고 stride convolution이나 fractional-strided convolution을 사용하여 feature-map의 크기 조절
 2. Batch normalization 적용(생성된 이미지들이 하나의 동일한 이미지로 만들어지는 collapsing 문제를 예방하는데에 효과적.)
 3. Convolution feature의 마지막 layer에서 Fully connected layer 제거(global averaging pooling)
 4. G의 activation으로 Tanh를 사용하고, 나머지 layer는 ReLU를 사용
@@ -29,10 +29,12 @@
 
 
 ## 4. Details Of Adversarial Traning
-
+![DCGAN2](https://user-images.githubusercontent.com/61506233/88564265-f8a81880-d06d-11ea-8092-47b1a70a305f.PNG)
 - LSUN(Large-scale Scene Understanding) : 침실 사진 dataset
-- Faces
+overfitting이나 memorizing을 통해 좋은 결과를 내는 것이 아님을 보였다.
+- Faces 
 - ImageNet-1K
+
 
 ## 5. Empirical Validation Of DCGANs Capabilities
 
@@ -41,3 +43,9 @@
 - Classifying SVHN Using GANs as a Feature Extractor
 
 ## 6. Investigating And Visualizing The Internals Of The Networks
+- Walking in the Latent space
+- Visualizing the Discriminator Features
+- Manupulating the Generator Representating
+: 그 결과, 그 위치에 다른 오브젝트를 채워넣었다.
+
+## 7. Conclusion and Feature Work
