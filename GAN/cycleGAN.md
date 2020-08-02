@@ -28,15 +28,26 @@ Cycle consistency loss와 adversarial losses를 X와 Y에 적용함으로써 전
 
 ## 3. Formulation
 목표는 주어진 도메인 X와 Y를 mapping하는 함수를 학습하는 것이다.
+
 - Adversarial Loss
 
+<img width="206" alt="cGAN1" src="https://user-images.githubusercontent.com/61506233/89123399-03e5c300-d50a-11ea-8f57-1e70c8b0beae.PNG">
+
 - Cycle Consistency Loss
+
+<img width="167" alt="cGAN2" src="https://user-images.githubusercontent.com/61506233/89123402-0516f000-d50a-11ea-874a-2fb5b2e8cd2d.PNG">
+
 mode collapse 문제가 생길 수 있기에, 위의 Adversarial Loss 만으로는 학습을 보장하기 어렵다. 따라서 가능한 mapping 함수의 공간을 줄이기 위해 cycle-consistent 해야하기 때문에 사용
 
 - Full Objective
 
+<img width="162" alt="cGAN3" src="https://user-images.githubusercontent.com/61506233/89123403-05af8680-d50a-11ea-92a7-b2353ee7c411.PNG">
+<img width="165" alt="cGAN4" src="https://user-images.githubusercontent.com/61506233/89123404-05af8680-d50a-11ea-8f6d-ef0ae350671e.PNG">
+
+
 
 ## 4. Implementation 5. Results
+<img width="434" alt="cGAN5" src="https://user-images.githubusercontent.com/61506233/89123405-06481d00-d50a-11ea-885d-4e7a7f559503.PNG">
 -> 코드 참고
 
 ## 6. Limitations and Discussion
