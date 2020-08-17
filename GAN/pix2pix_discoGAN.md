@@ -33,7 +33,7 @@ UNet - Encoder Decoder 구조에서, 정보의 손실이 발생하기때문에 S
 - Training Data가 Pair로 존재해야 함.
 
 
-### DiscoGAN
+## DiscoGAN
 
 - unpaired dataset을 사용해야 한다는 점에서 cycleGAN과 완전히 동일
 - Generator 학습시,  (GAN Loss + Feature Loss)
