@@ -125,3 +125,9 @@ for champion in cfg['ChampionList']:
 	print(champion["name"], champion["skill"])
 
 ```
+
+
+
+# 변수 참고용
+![image](https://user-images.githubusercontent.com/61506233/95857264-50653e80-0d96-11eb-96f9-182795d97176.png)
+
