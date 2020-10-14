@@ -2,8 +2,9 @@
 ![image](https://user-images.githubusercontent.com/61506233/95973724-faa09d00-0e4e-11eb-9a05-c77308aad1d3.png)
 
 
-공부하려고 쓴건데 여기 정리되어있다!!!
-http://korea.gnu.org/documents/copyleft/osd-korean.html
+- 공부하려고 쓰려고 했는데 여기 정리되어있다!!! 
+- 시험당일날 보면 되겠지...? ㅎㅁㅎ
+- http://korea.gnu.org/documents/copyleft/osd-korean.html
 
 ### 1. Free Redistribution
 라이선스는 여러 다른 출처의 프로그램을 포함하는 종합 소프트웨어 배포의 구성 요소로서 소프트웨어를 판매하거나 배포하는 것을 어떤 당사자도 제한해서는 안 된다. 
