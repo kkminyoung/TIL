@@ -1,5 +1,5 @@
-# Anomaly Detection 논문리뷰
+# Abnormal Event Detection 논문리뷰
 
-졸프 딥러닝 모델 개선을 위해, 논문읽고 리뷰글 작성해서 올리는 폴더 
+논문읽고 리뷰글 작성해서 올리는 폴더 
 
 파이팅 ^_^
