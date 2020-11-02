@@ -1,7 +1,5 @@
 # learn git branch 리모트 파트 
 
-- 여기 다시봐야함 ^0^ 일단 복붙해놈
-
 링크 : https://learngitbranching.js.org/
 
 ## 0. Remote Introduction
@@ -18,7 +16,7 @@
 
 
 # 1.1 Clone Intro
-- git clone은 원격 저장소의 복사본을 _로컬_에 생성할때 사용하는 명령어
+- git clone은 원격 저장소의 복사본을 로컬에 생성할때 사용하는 명령어
 - Git 브랜치 배우기에서는 이 명령어를 살짝 다르게 사용
 - git clone이 로컬 저장소에서 원격 저장소를 생성해냄
 - 물론 실제 명령어와 반대로 작동하는 것이지만 클론과 원격 저장소 사이의 연결관계를 이해하는데 도움이되서 이렇게 함
@@ -219,8 +217,6 @@ git push
 
 ```
 // feature 라는 이름의 다른 브랜치를 만들어 원격 저장소에 push 하세요 그리고 원격 저장소와 동기화될 수 있도록 로컬 저장소의 master 브랜치를 reset하세요. 그렇지 않으면 여러분이 다음에 pull을 시도할 때 문제가 발생하거나, 다른 협업자들의 커밋이 여러분의 커밋과 충돌할 수도 있습니다.
-
-이게 맞는건가?
 
 git reset --hard o/master
 git checkout -b feature C2
