@@ -8,10 +8,29 @@ class OwnerController {
 }
 ```
 
+```java
+class OwnerController {
+    private OwnerRepository repo;
+    public OwnerController(OwnerRepository repo) {
+        this.repo = repo;
+    }
+    // repo를 사용
+}
+
+class OwnerControllerTest {
+    @Test
+    public void create() {
+        OwnerRepository repo = new OwnerRepository();
+        OwnerController controller = new OwnerController(repo);
+    }
+}
+```
+
 OwnerController에서 사용할 Repository 객체를 직접 생성하지 않고, 생성자를 통해 바깥쪽에서 주입한다. 
+즉, 의존성을 만드는 일은 OwnerController가 하지 않고 밖에서 한다.
 Controller 객체를 만들 때 무조건 repository 객체가 있어야 하기 때문에, 이 객체가 없으면 객체 생성 자체가 불가능하다.
 
-DI(의존성 주입)를 이용하면 개발자가 실수로 owners를 초기화 하지 않아서 NPE가 발생하는 문제를 예방할 수 있다.
+DI(의존성 주입)를 이용하면 개발자가 실수로 owners를 초기화 하지 않아서 Null Point Exception이 발생하는 문제를 예방할 수 있다.
 
 ```java
 class OwnerController {
@@ -25,12 +44,14 @@ class OwnerController {
 ```
 
 ### loC 컨테이너
+ApplicationContext(BeanFactory) 
+
 - 빈(bean)을 만들고 엮어주며 제공해준다.
-- 빈이란? IoC 컨테이너 안에 등록된 객체들(클래스 옆에 초록색 아이콘 붙은 클래스들!)
+- 빈이란? IoC 컨테이너 안에 등록된 객체들(클래스 옆에 녹색콩이 붙은 클래스들!)
 - IoC 컨테이너 내부에서 OwnerController 객체를 만들어주고, OwnerRepository 타입의 객체도 만들어 준다.
 - OwnerController, OwnerReposiotry는 모두 ApplicationContext 내에서 만들어지는 빈이다.
 
-- 의존성 주입은 Bean끼리만 가능하다.
+- 기본적으로 의존성 주입은 Bean끼리만 가능하다.
 
 ```java
 @Autowired
@@ -61,7 +82,7 @@ public String bean() {
 ```
 
 - Bean으로 관리하는 객체는 매번 새로 생성되지 않고, 처음에 만들어둔 객체를 재사용하게 된다.
-- 이런 식으로 ApplicationContext나 getBean()을 직접 사용할 일은 거의 없다.
+- 아이러니하게도 이런 식으로 ApplicationContext나 getBean()을 직접 사용할 일은 거의 없다. (알아서 주입을 해주기 때문에!)
 
 ### 빈(Bean)
 - Spring IoC 컨테이너가 관리하는 객체
@@ -86,6 +107,7 @@ public String bean() {
     - Repository는 약간 특이 케이스인데, JPA의 기능에 의해 등록된다. 어노테이션이 없어도 Repository 인터페이스를 상속 받으면 그 구현체를 Bean으로 등록한다.
 
 방법2) xml이나 자바 설정 파일에 직접 등록 
+
 두가지 자바 설정 파일을 작성하는 방식이 더 많이 쓰이는 추세다.
 @Configuration 어노테이션을 붙인 클래스를 만들고, 그 안에서 @Bean을 사용해 직접 Bean을 정의한다.
 
@@ -102,10 +124,12 @@ public class SampleConfig {
 @Configuration 어노테이션이 컴포넌트 스캐닝할 때 읽히게 되고, 안에서 정의한 bean들이 IoC 컨테이너에 정의된다.
 
 
-
 ### 의존성 주입 (Dependency Injection)
-- @Autowired : 생성자, setter, 필드에 붙일 수 있다. Spring 5 이후로는, 매개변수가 하나뿐인 생성자라면 어노테이션을 생략해도 DI가 자동으로 적용된다.
-Spring에서 권장하는 위치는 생성자. 필수적으로 생성해야 하는 레퍼런스 없이는 해당 클래스의 인스턴스 생성 자체가 불가능.
-순환 참조/상호 참조하는 의존성 문제가 발생한다면 필드나 setter에 붙이면 됨. 물론 가급적 이런 일이 발생하지 않게 하는 것이 좋다.
-필드에 붙일 경우 final과는 함께 사용할 수 없다.
+- @Autowired : 생성자, setter, 필드에 붙일 수 있다. Spring 4.3 이후로는, 매개변수가 하나뿐인 생성자라면 Autowired 어노테이션을 생략해도 DI가 자동으로 적용된다.
+- @Inject
+
+#### 어디에?
+- Spring에서 권장하는 위치는 생성자. 필수적으로 생성해야 하는 레퍼런스 없이는 해당 클래스의 인스턴스 생성 자체가 불가능.
+- 순환 참조/상호 참조(a가 b를 참조하고 b가 a를 참조하고)하는 의존성 문제가 발생한다면 필드나 setter에 붙이면 해결할 수 있다. 물론 가급적 이런 일이 발생하지 않게 하는 것이 좋다.
+- 필드에 붙일 경우 final과는 함께 사용할 수 없다.
 
