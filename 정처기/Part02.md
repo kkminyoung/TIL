@@ -218,3 +218,32 @@ V(G) = P(조건 분기문) + 1
 - Plug-in 방식 : DB 레벨의, 확장성 프러시저 기능 이용. DBMS에 Plug-in 모듈로 동작
 - Hybrid 방식 : API +Plug-in 결합 방식, DB서버와 애플리케이션 서버로 부하 분산
 
+### 중요 인터페이스 데이터의 암호화 전송
+- 민감한 정보를 통신채널을 통하여 전송 시에는 반드시 암호화복호화 과정을 거쳐야함
+- 기술
+```
+인터페이스 보안 기능은 일반적으로 네트워크, 애플리케이션, 데이터 베이스 영역에 적용한다.
+- IPSec
+- SSL
+- S-HTTP
+ ```
+ 
+ -> 정처기 내용보다 깊지만 읽어볼만한 것
+- http://vnfmsehdy.blogspot.com/2016/08/27-vpn-ipsec-ssltls.html
+- https://peemangit.tistory.com/307
+- https://engineering.purdue.edu/kak/compsec/NewLectures/Lecture20.pdf
+ 
+
+### 인터페이스 수현 검증
+- 인터페이스가 정상적으로 문제없이 작동하는지 확인하는 것
+-검증도구
+```
+● xUnit : Java(Junit), C++(Cppunit) 등 다양한 언어를 지원하는 단위 테스트 프레임워크
+● STAF : 서비스 호출 및 컴포넌트 재사용 등 다양한 환경을 지원하는 프레임워크
+● Fitnesse : 웹 기반 테스트 케이스 설계, 실행, 결과 확인 등을 지원하는 프레임워크
+● NTAF : Fitness의 장점인 협업 + STAF의 장점인 재사용 및 확장성 = NHN의 테스트 자동화 프레임워크
+● Selenium : 다양한 브라우저 및 개발언어를 지원하는 웹 애플리케이션 프레임워크
+● watir : Ruby를 사용하는 애플리케이션 프레임워크
+```
+
+- AJAX : js를 사용한 비동기 통신 기술로 클라이언트와 서버간에 xml 데이터를 주고 받는 기술
